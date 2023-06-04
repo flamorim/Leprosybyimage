@@ -1,4 +1,4 @@
-<img src="[nome_do_arquivo.png](https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg)" alt="Descrição da imagem" width="300"/>
+<img src="(https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg)" alt="Descrição da imagem" width="300"/>
 
 # Hanseníase - Diagnóstico da Forma Indeterminada através de Imagens com Deep Learning.
 
