@@ -1,5 +1,3 @@
-<img src="(https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg)" alt="Descrição da imagem" width="300"/>
-
 # Hanseníase - Diagnóstico da Forma Indeterminada através de Imagens com Deep Learning.
 
 
@@ -27,14 +25,90 @@ O reconhecimento de padrões visuais é uma habilidade fundamental em diagnósti
 
 A hanseníase indeterminada é aquela onde os sintomas de pele começam se manifestar sem ser possível determinar há quanto tempo o paciente contraiu o bacilo. A hanseníase tuberculóide é a evolução da hanseníase indeterminada, onde os sintomas de pele se intensificam podendo acontecer queda de pelos e nódulos.
 
-Seguem duas imagens para exemplificar, onde a da esquerda é de hanseníase indeterminada e a da direita da hanseníase tuberculóide
+Este é orientado para o diagnóstico da hanseníase indeterminada.
 
-![](https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg){:width="50%"}
+Seguem duas imagens para exemplificar:
+<p align="center">
+<img src="auxiliary/fig01-ind.jpg" width="250" height="150">
+</p>
+<p align="center">
+Fig1 - Hanseniase Indeterminada
+</p>
+<p align="center">
+<img src="auxiliary/fig01-tub.jpg" width="250" height="150">
+</p>
+<p align="center">
+Fig2 - Hanseníase Tuberculóide
+</p>
 
-![](https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg){:width="30%"}
+### 2. Dataset
 
-![](https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg){:width="20%"}
+As imagens com hanseníase foram obtidas do dataset [AI4leprosy](https://arcadados.fiocruz.br/dataset.xhtml?persistentId=doi:10.35078/1PSIEL), mantido pelo laboratório de Hanseníase da [Fundação Oswaldo Cruz, ](https://dadosdepesquisa.fiocruz.br/dataverse/hanseniase). Nesta ocasião ele possuia 1231 imagens de alta-resolução de lesões na pele diagnosticadas com hanseníase, mas infelizmente nem todas foram possíveis de serem utilizadas. Muitas eram relativas à hanseníase tuberculóide, algumas eram duplicadas e no final foram selecionadas 434 imagens.
+
+Para imagens sem hanceníase, foram obtidas somente 36 imagens e, para evitar um desbalanceamento maior, após alguns ajustes do modelo, trabalhou-se com 141 imagens com hanseníase. Desta forma, o dataset do projeto ficou com 176 imagens.
+
+Foi utilizado a técnica de data augmentation, onde a quantidade de amostras do conjunto de dados é virtualmente aumentada diversificando os dados, evitando o overfitting e compensando o custo envolvido na coleta de mais dados.
+
+### 3. Modelo
+
+A Rede Neural Convolucional (CNN) é uma classe especial de redes Deep Learning que é construída com a capacidade de extrair recursos exclusivos de dados de imagem.
+Uma rede CNN pode ter todos os seus pesos  ajustados durante o processo de aprendizado ou pode-se aproveitar várias arquiteturas que foram desenvolvidas, e com pesos ajustados (normalmente a partir de uma base mais farta de dados) e disponibilizadas publicamente. Nesse caso, é preciso adaptá-la e ajustá-la de acordo com a aplicação desejada.
+
+Dentre estas redes pré-treinadas disponíveis, foi escolhida a [CNN VGG16](https://storage.googleapis.com/tensorflow/keras-applications/vgg16/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5) pré treinada com seus pesos congelados e inserida uma nova head para a tarefa de classificação com uma saída sigmoid.
+
+O treinamento foi feito em duas etapas e dividindo a base de amostras na proporção de 80% para treinamento e 20% para teste. A primeira foi com 20 épocas, onde foi obtido uma acurácia de 88%.  A segunda, um fine tunning descongelando toda a rede e treinando-a novamente com apenas cinco épocas e reduzindo  o learning rate, antes de 0,005 para 0,001. Embora o score tenha aumentado um pouco, a acurácia praticamente  se manteve a mesma, indicando que não houve uma melhora significativa nesse fine-tunning. A tabela abaixo ilustra os resultados do treinamento:
+<table>
+  <tr>
+    <th>Etapa</th>
+    <th>Épocas</th>
+    <th>Score</th>
+    <th>Acurácia</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>20</td>
+    <td>0,3507</td>
+    <td>0,8865</td> 
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>5</td>
+    <td>0,4258</td>
+    <td>0,8842</td> 
+  </tr>
+ 
+</table>
 
 
-Neste trabalho trabalharemos para o diagnóstico da hanseníase indeterminada.
+A saída da rede proposta é através de softmax, e assim temos um valor entre 0 e 1, onde quanto mais próximo de 0 indica a sintomas hanseníase indeterminada e quanto mais próximo de 1 ausência destes sintomas.
+Segue abaixo imagens de onde foram feitas inferências e de conhecimento prévio da ausência de hanseníase indeterminada:
+
+
+Seguem duas imagens para exemplificar:
+<p align="center">
+<img src="auxiliary/fig01-not.jpg" width="250" height="150">
+</p>
+<p align="center">
+Fig1 - Predição 0,68
+</p>
+<p align="center">
+<img src="auxiliary/fig02-not.jpg" width="250" height="150">
+</p>
+<p align="center">
+Fig2 - Predição 0,97
+</p>
+<p align="center">
+<img src="auxiliary/fig03-not.jpg" width="250" height="150">
+</p>
+<p align="center">
+Fig2 - Predição 0,86
+</p>
+
+
+
+
+
+
+
+
 
