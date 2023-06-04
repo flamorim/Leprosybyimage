@@ -8,7 +8,7 @@
 
 Trabalho de conclusão do curso [BI MASTER](https://ica.puc-rio.ai/bi-master).
 
-- [Link para o código](https://github.com/flamorim/Leprosybyimage).
+- [Link para o código](TCC_FlavioAmorim_2023_06_04.ipynb).
 
 ---
 
