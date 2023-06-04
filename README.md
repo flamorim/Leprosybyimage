@@ -16,8 +16,7 @@ Resumo: A proposta deste trabalho é apresentar um modelo de inteligência artif
 
 Abstract. The purpose of this work is to present an artificial intelligence model, capable of supporting dermatologists in the diagnosis of Indeterminate Leprosy, through image analysis. A backbone was developed in Deep Learning, based on a Convolutional network, with the task of classification, that predicts the probability of an image having Indeterminate Leprosy.
 
-
- 
+ ---
 
 ### 1. Introdução
 
@@ -43,6 +42,7 @@ Fig1 - Hanseniase Indeterminada
 <p align="center">
 Fig2 - Hanseníase Tuberculóide
 </p>
+---
 
 ### 2. Dataset
 
@@ -51,6 +51,7 @@ As imagens com hanseníase foram obtidas do dataset [AI4leprosy](https://arcadad
 Para imagens sem hanceníase, foram obtidas somente 38 [imagens](images/sem-hanseniase) e, para evitar um desbalanceamento maior, após alguns ajustes do modelo, trabalhou-se com 141 imagens com hanseníase. Desta forma, o dataset do projeto ficou com 176 imagens.
 
 Foi utilizado a técnica de data augmentation, onde a quantidade de amostras do conjunto de dados é virtualmente aumentada diversificando os dados, evitando o overfitting e compensando o custo envolvido na coleta de mais dados.
+---
 
 ### 3. Modelo
 
@@ -81,6 +82,7 @@ O treinamento foi feito em duas etapas e dividindo a base de amostras na propor�
   </tr>
  
 </table>
+---
 
 ### 4. Resultados
 
@@ -130,6 +132,7 @@ Fig7 - Predição = 0,23
 Fig8 - Predição = 0,41
 </p>
 
+---
 
 ### 5. Conclusão
 
