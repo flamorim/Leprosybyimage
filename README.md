@@ -27,6 +27,8 @@ A hanseníase indeterminada é aquela onde os sintomas de pele começam se manif
 
 Este é orientado para o diagnóstico da hanseníase indeterminada.
 
+<img src="auxiliary/fig01-not.jpg" width="250" height="150">
+
 Seguem duas imagens para exemplificar:
 <p align="center">
 <img src="auxiliary/fig01-ind.jpg" width="250" height="150">
