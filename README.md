@@ -1,4 +1,4 @@
-![]https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg)
+![](https://github.com/flamorim/Leprosybyimage/blob/main/auxiliary/fig01-ind.jpg)
 
 # Hanseníase - Diagnóstico da Forma Indeterminada através de Imagens com Deep Learning.
 
