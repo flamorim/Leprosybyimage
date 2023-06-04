@@ -42,6 +42,7 @@ Fig1 - Hanseniase Indeterminada
 <p align="center">
 Fig2 - Hanseníase Tuberculóide
 </p>
+
 ---
 
 ### 2. Dataset
