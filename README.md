@@ -27,10 +27,8 @@ A hanseníase indeterminada é aquela onde os sintomas de pele começam se manif
 
 Seguem duas imagens para exemplificar, onde a da esquerda é de hanseníase indeterminada e a da direita da hanseníase tuberculóide
 
-
-![](https://pandao.github.io/editor.md/images/logos/editormd-logo-180x180.png)
-
-![](https://github.com/flamorim/Leprosybyimage/tree/main/auxiliary/fig01-ind.jpg)
+![descricao](https://github.com/flamorim/Leprosybyimage/tree/main/auxiliary/fig01-ind.jpg)
+![desc](auxiliary/fig01-ind.jpg)
 
 Neste trabalho trabalharemos para o diagnóstico da hanseníase indeterminada.
 
