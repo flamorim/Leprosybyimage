@@ -51,7 +51,9 @@ As imagens com hanseníase foram obtidas do dataset [AI4leprosy](https://arcadad
 
 Para imagens sem hanceníase, foram obtidas somente 38 [imagens](images/sem-hanseniase) e, para evitar um desbalanceamento maior, após alguns ajustes do modelo, trabalhou-se com 141 imagens com hanseníase. Desta forma, o dataset do projeto ficou com 176 imagens.
 
-Foi utilizado a técnica de data augmentation, onde a quantidade de amostras do conjunto de dados é virtualmente aumentada diversificando os dados, evitando o overfitting e compensando o custo envolvido na coleta de mais dados.
+Foi utilizado a técnica de data augmentation, onde a quantidade de amostras do conjunto de dados é virtualmente aumentada diversificando os dados, evitando o overfitting e compensando o custo envolvido na coleta de mais dados.  
+
+
 ---
 
 ### 3. Modelo
