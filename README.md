@@ -8,7 +8,7 @@
 
 Trabalho de conclusão do curso [BI MASTER](https://ica.puc-rio.ai/bi-master).
 
-- [Link para o código](TCC_FlavioAmorim_2023_06_04.ipynb).
+- [Link para o código](TCC_FlavioAmorim_2023_06_08-v2.ipynb).
 
 ---
 
@@ -63,7 +63,7 @@ Uma rede CNN pode ter seus pesos ajustados durante o processo de aprendizado, ou
 
 Dentre estas redes pré-treinadas disponíveis, foi escolhida a [CNN VGG16](https://storage.googleapis.com/tensorflow/keras-applications/vgg16/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5) pré treinada com seus pesos congelados e inserida uma nova head para a tarefa de classificação com uma saída sigmoid.
 
-O treinamento foi feito em duas etapas e dividindo a base de amostras na proporção de 80% para treinamento e 20% para teste. A primeira foi com 20 épocas, onde foi obtido uma acurácia de 88%.  A segunda, um fine tunning descongelando toda a rede e treinando-a novamente com apenas cinco épocas e reduzindo  o learning rate, antes de 0,005 para 0,001. Embora o score tenha aumentado um pouco, a acurácia praticamente  se manteve a mesma, indicando que não houve uma melhora significativa nesse fine-tunning. A tabela abaixo ilustra os resultados do treinamento:
+O treinamento foi feito em duas etapas e dividindo a base de amostras na proporção de 80% para treinamento e 10% para validação e 10% para teste. A primeira foi com 20 épocas, onde através do mecanismo de "early stop", a melhor época foi a 13 com uma acurácia de 88%.  A segunda, um fine tunning descongelando toda a rede e treinando-a novamente com apenas cinco épocas e reduzindo  o learning rate, antes de 0,0005 para 0,0001. Embora o score tenha aumentado um pouco, a acurácia praticamente  se manteve a mesma, indicando que não houve uma melhora significativa nesse fine-tunning. A tabela abaixo ilustra os resultados do treinamento:
 <table>
   <tr>
     <th>Etapa</th>
@@ -73,44 +73,56 @@ O treinamento foi feito em duas etapas e dividindo a base de amostras na propor�
   </tr>
   <tr>
     <td>1</td>
-    <td>20</td>
-    <td>0,3507</td>
-    <td>0,8865</td> 
+    <td>13</td>
+    <td>0,1589</td>
+    <td>0,8888</td> 
   </tr>
-  <tr>
-    <td>2</td>
-    <td>5</td>
-    <td>0,4258</td>
-    <td>0,8842</td> 
-  </tr>
+
  
 </table>
+
+As características do otimizador utilizado são: "Adam", a perda com 'binary_crossentropy' e métrica com acurácia.
+
 ---
 
 ### 4. Resultados
 
-A saída da rede proposta é através de softmax, e assim temos um valor entre 0 e 1, onde quanto mais próximo de 0 indica a sintomas hanseníase indeterminada e quanto mais próximo de 1 ausência destes sintomas.
+A saída da rede proposta é através de softmax, e assim temos um valor entre 0 e 1, onde quanto mais próximo de 0 indica a sintomas hanseníase indeterminada e quanto mais próximo de 1 ausência destes sintomas. Foi adotado o valor de 0,1 para o "threshould", isto é, predições com valor inferior a 0,1 são consideradas com presença de hanseníase e superior ou igual a 0,1 com ausência de hanseníase.
 
-Segue abaixo imagens de onde foram feitas inferências, com comhecimento prévio da ausência de hanseníase indeterminada, e suas respectivas predições calculadas pelo modelo:
+Abaixo segue a matriz de confusão obtida na análise do conjunto de validação, onde pode-se observar dois erros, sendo um no caso de hanseníase e um no caso sem hanseníase:
+
+<p align="center">
+<img src="auxiliary/mconfusao_valid.png" height="200">
+</p>
+<p align="center">
+Fig3 - Predição = 0,68
+</p>
+
+
+A avaliação sobre o conjunto de teste obteve um resultado de 100% de acerto, isto é, todos as 18 predições foram certas. A figura abaixo mostra a matriz de confusão:
+
+<p align="center">
+<img src="auxiliary/mconfusao_test.png" height="200">
+</p>
+<p align="center">
+Fig3 - Predição = 0,68
+</p>
+
+
+Segue abaixo imagens do conjunto de teste onde foram feitas inferências, com comhecimento prévio da ausência de hanseníase indeterminada, e suas respectivas predições calculadas pelo modelo:
 
 
 <p align="center">
 <img src="auxiliary/fig01-not.png" height="200">
 </p>
 <p align="center">
-Fig3 - Predição = 0,68
+Fig3 - Predição = 0,4217
 </p>
 <p align="center">
 <img src="auxiliary/fig02-not.png"  height="200">
 </p>
 <p align="center">
-Fig4 - Predição = 0,97
-</p>
-<p align="center">
-<img src="auxiliary/fig03-not.png" height="200">
-</p>
-<p align="center">
-Fig5 - Predição = 0,86
+Fig4 - Predição = 0,2379
 </p>
 
 
@@ -127,12 +139,6 @@ Fig6 - Predição = 0,37
 </p>
 <p align="center">
 Fig7 - Predição = 0,23
-</p>
-<p align="center">
-<img src="auxiliary/fig03-han.png" height="200">
-</p>
-<p align="center">
-Fig8 - Predição = 0,41
 </p>
 
 ---
