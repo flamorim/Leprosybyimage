@@ -105,7 +105,7 @@ A avaliação sobre o conjunto de teste obteve um resultado de 100% de acerto, i
 <img src="auxiliary/mconfusao_test.png" height="200">
 </p>
 <p align="center">
-Fig3 - Predição = 1,00
+Fig4 - Predição = 1,00
 </p>
 
 
@@ -116,13 +116,13 @@ Segue abaixo imagens do conjunto de teste onde foram feitas inferências, com co
 <img src="auxiliary/fig01-not.png" height="200">
 </p>
 <p align="center">
-Fig3 - Predição = 0,4217
+Fig5 - Predição = 0,4217
 </p>
 <p align="center">
 <img src="auxiliary/fig02-not.png"  height="200">
 </p>
 <p align="center">
-Fig4 - Predição = 0,2379
+Fig6 - Predição = 0,2379
 </p>
 
 
@@ -132,13 +132,13 @@ Segue abaixo imagens de onde foram feitas inferências, com comhecimento prévio
 <img src="auxiliary/fig01-han.png" height="200">
 </p>
 <p align="center">
-Fig6 - Predição = 0,0223
+Fig7 - Predição = 0,0223
 </p>
 <p align="center">
 <img src="auxiliary/fig02-han.png"  height="200">
 </p>
 <p align="center">
-Fig7 - Predição = 0,0816
+Fig8 - Predição = 0,0816
 </p>
 
 ---
