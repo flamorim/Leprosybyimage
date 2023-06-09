@@ -95,7 +95,7 @@ Abaixo segue a matriz de confusão obtida na análise do conjunto de validação
 <img src="auxiliary/mconfusao_valid.png" height="200">
 </p>
 <p align="center">
-Fig3 - Predição = 0,68
+Fig3 - Predição = 0,88
 </p>
 
 
@@ -105,7 +105,7 @@ A avaliação sobre o conjunto de teste obteve um resultado de 100% de acerto, i
 <img src="auxiliary/mconfusao_test.png" height="200">
 </p>
 <p align="center">
-Fig3 - Predição = 0,68
+Fig3 - Predição = 1,00
 </p>
 
 
@@ -132,13 +132,13 @@ Segue abaixo imagens de onde foram feitas inferências, com comhecimento prévio
 <img src="auxiliary/fig01-han.png" height="200">
 </p>
 <p align="center">
-Fig6 - Predição = 0,37
+Fig6 - Predição = 0,0223
 </p>
 <p align="center">
 <img src="auxiliary/fig02-han.png"  height="200">
 </p>
 <p align="center">
-Fig7 - Predição = 0,23
+Fig7 - Predição = 0,0816
 </p>
 
 ---
