@@ -156,7 +156,7 @@ Esse estudo pode evoluir e utilizar mais imagens em seu treinamento, o que aperf
 Como mencionado anteriormente, o conjunto de dados utilizado está desbalanceado, com poucas imagens sem indicação de hanseníase, o que pode prejudicar o aprendizado do modelo e reduzir sua acurácia. Portanto, é recomendado obter mais imagens desse tipo na possibilidade de melhorar o desempenho.
 
 
-Por fim, sugere-se a utilização de camadas adicionais no segmento de classificação da rede neural convolucional, conhecido como head, para uma transição mais suave. Por exemplo, pode-se reduzir gradualmente o número de neurônios de 1024, na saída do backbone convolucional, para 1 neurônio na saída final da rede.
+Por fim, sugere-se a utilização de camadas adicionais no segmento de classificação da rede neural, conhecido como head, para uma transição mais suave. Por exemplo, pode-se reduzir gradualmente o número de neurônios de 1024, na saída do backbone convolucional, para 1 neurônio na saída final da rede.
 
 
 ---
