@@ -109,7 +109,7 @@ Fig4 - Predição = 1,00
 </p>
 
 
-Segue abaixo imagens do conjunto de teste onde foram feitas inferências, com comhecimento prévio da ausência de hanseníase indeterminada, e suas respectivas predições calculadas pelo modelo:
+Segue abaixo imagens do conjunto de teste onde foram feitas inferências, com conhecimento prévio da ausência de hanseníase indeterminada, e suas respectivas predições calculadas pelo modelo:
 
 
 <p align="center">
@@ -147,6 +147,16 @@ Fig8 - Predição = 0,0816
 
 No Brasil, a hanseníase ainda se constitui em um problema de saúde pública o que exige uma vigilância resolutiva. O estudo permitiu observar que Deep Learning pode auxiliar fortemente os dermatologistas no diagnóstico da Hanseníase Indeterminada e que consequentemente também prevenirá a ocorrência das formas mais graves da Hanseníase.
 Esse estudo pode evoluir e utilizar mais imagens em seu treinamento, o que aperfeiçoará sua capacidade de reconhecer os sinais da Hanseníase Indeterminada. Também podem ser introduzidas outras classes de imagens, como doenças de pele, cicatrizes ou feridas para também ensinar ao modelo de deep learning outras manifestações na pele diferentes da Hanseníase.
+
+---
+
+### 6. Recomendações para Trabalhos Futuros
+
+
+Como mencionado anteriormente, o conjunto de dados utilizado está desbalanceado, com poucas imagens sem indicação de hanseníase, o que pode prejudicar o aprendizado do modelo e reduzir sua acurácia. Portanto, é recomendado obter mais imagens desse tipo na possibilidade de melhorar o desempenho.
+
+
+Por fim, sugere-se a utilização de camadas adicionais no segmento de classificação da rede neural convolucional, conhecido como head, para uma transição mais suave. Por exemplo, pode-se reduzir gradualmente o número de neurônios de 1024, na saída do backbone convolucional, para 1 neurônio na saída final da rede.
 
 
 ---
